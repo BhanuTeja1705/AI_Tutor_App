@@ -3,4 +3,4 @@ google-generativeai
 Pillow
 gTTS
 pyttsx3
-speech_recognition
+speechrecognition
