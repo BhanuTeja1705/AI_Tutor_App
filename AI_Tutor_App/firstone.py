@@ -9,14 +9,11 @@ import base64
 # ============================
 # FUNCTION: Set Background Image
 # ============================
-def set_bg_with_overlay(image_path):
-    with open(image_path, "rb") as img_file:
-        img_data = base64.b64encode(img_file.read()).decode()
-
+def set_bg_with_overlay(image_url):
     css = f"""
     <style>
     .stApp {{
-        background-image: url("data:image/jpg;base64,{img_data}");
+        background-image: url("{image_url}");
         background-size: cover;
         background-position: center;
     }}
@@ -79,7 +76,7 @@ st.set_page_config(page_title="🤖 AI Powered Tutor", layout="wide")
 # ============================
 # APPLY BACKGROUND & CUSTOM STYLES
 # ============================
-set_bg_with_overlay('image/ai3.jpg')
+set_bg_with_overlay('https://i.pinimg.com/736x/50/11/2e/50112e00d8c74912aa41c04af323dc6a.jpg')   # Replace with your background image URL
 apply_custom_styles()
 
 # ============================
@@ -103,7 +100,7 @@ if "voice_input" not in st.session_state:
 col_logo, col_title = st.columns([1, 5])
 
 with col_logo:
-    st.image('image/ai_logo.png', width=100)
+    st.image('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSXhCYzlKlGCZcmwEqScGeU7SJOjcPVOiS-YvirrLkZ_Kz4kRxd', width=100)   # Replace with your logo image URL
 
 with col_title:
     st.markdown('<div class="main-heading">🤖 Welcome to AI Tutor</div>', unsafe_allow_html=True)
